@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{latexsym}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{amsfonts}
+\usepackage{enumerate}
+\usepackage{verbatim}
+\usepackage[document]{ragged2e}
+\usepackage{indentfirst}
+
+\title{Document for class 3} 
+\author{Rashad Mahmudov}
+\date{March 16, 2020}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+\small{\justify{Curves and surfaces are usually defined with a minimum assumption like differ-entiability or rectifiability.This hypothesis seems to be natural and are useful to access to some basic properties such that the possibility to compute the length of a curve $C(t)$ between to point $C(a)$ and $C(b) : L = \int_a^b || C'(t||dt$. But what arise if these hypothesis are not verified? Is is possible to defined curves which
+are no-where differentiable? Is it possible to control they geometry? The fractal theory gives numerous answers of these questions.
+
+\setlength{\parindent}{0.5cm} This chapter is not devoted to fractal geometry and it don’t give answer
+to all of these questions. But it describes how it is possible to use the fractal
+paradigm to design a set of curves which are not possible to describe with others
+models because of the simple fact that these models made the assumption of the differentiability.}}
+
+\section{Some math}
+In this section we gives some mathematics results used in this course. Profs can
+be found.
+\normalsize{\paragraph{Definition 1} (Contraction). Let $(\chi,d)$ be a metric space. Let $f$ be a trans-
+formation on $(\chi,d). \,\,f$ is a contraction $(\chi,d)$  iff 
+$\exists s \in \mathbb{R},\, s < 1$ tq $\forall x,y \in$
+
+$\chi,d(f(x), f(y)) \leq s\times d(x, y)$ 
+\paragraph{Definition 2}(Banach Fixed Point theorem).Let $(\chi,d)$ be a non-empty com-
+plete metric space and $f$ a contraction on $(\chi,d)$. Then, there exists a unique
+point $x \in \chi$,named the fixed point of $f$, verifying $f(x) = x$.}
+\section{Lists example}
+\begin{enumerate}
+  \item First entry
+  \item Second entry
+  \item Third entry
+\end{enumerate}
+\newpage
+\begin{itemize}
+  \item First entry
+  \item Second entry
+  \item Third entry
+\end{itemize}
+
+\subsection{Package enumerate}
+\justify{This package gives the enumerate environment an optional argument which
+determines the style in which the counter is printed. An occurence of one of the tokens A a I i or 1 produces the value of the counter printed with (respectively)
+
+\noindent\verb|\Alph \alph \Roman \roman or\arabic|. These letters may be surrounded by any strings involving any other TEX expressions, however the tokens A a I i 1
+must be inside a group if they are not to be taken as special.
+
+\indent You have to load package \verb|enumerate| writing \verb|\usepackage{enumerate}|.}
+
+\newcommand{\myparagraph}{\mbox{}\\}
+\paragraph{Examples}\myparagraph
+
+EX i. one one one one one one one one one one one\myparagraph
+
+\hspace{-1mm}EX ii. two\myparagraph
+
+example a) one of two one of two one of two \myparagraph
+
+example b) two of two \myparagraph
+
+\paragraph{Remark}\myparagraph\vspace{-5mm}
+
+For writing \LaTeX\, code inside \LaTeX\, document you have to load and use
+\verb|verbatim| package.
+
+\end{document}

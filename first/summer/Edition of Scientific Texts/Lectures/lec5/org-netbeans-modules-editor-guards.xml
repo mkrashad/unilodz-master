@@ -1,0 +1,64 @@
+n false;
+  }
+
+  return entries ? entries.length === size : items.length === length;
+}
+
+function nodeNeedsNumericalBuckets(item) {
+  return nodeSupportsNumericalBucketing(item) && getNumericalPropertiesCount(item) > MAX_NUMERICAL_PROPERTIES;
+}
+
+function makeNodesForPromiseProperties(item) {
+  const {
+    promiseState: {
+      reason,
+      value,
+      state
+    }
+  } = getValue(item);
+  const properties = [];
+
+  if (state) {
+    properties.push(createNode({
+      parent: item,
+      name: "<state>",
+      contents: {
+        value: state
+      },
+      type: NODE_TYPES.PROMISE_STATE
+    }));
+  }
+
+  if (reason) {
+    properties.push(createNode({
+      parent: item,
+      name: "<reason>",
+      contents: {
+        value: reason
+      },
+      type: NODE_TYPES.PROMISE_REASON
+    }));
+  }
+
+  if (value) {
+    properties.push(createNode({
+      parent: item,
+      name: "<value>",
+      contents: {
+        value: value.getGrip ? value.getGrip() : value,
+        front: value.getGrip ? value : null
+      },
+      type: NODE_TYPES.PROMISE_VALUE
+    }));
+  }
+
+  return properties;
+}
+
+function makeNodesForProxyProperties(loadedProps, item) {
+  const {
+    proxyHandler,
+    proxyTarget
+  } = loadedProps;
+  const isProxyHandlerFront = proxyHandler && proxyHandler.getGrip;
+  const p

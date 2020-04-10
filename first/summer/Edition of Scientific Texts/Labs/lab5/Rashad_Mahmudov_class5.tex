@@ -1,0 +1,85 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{sectsty}
+\usepackage{color}
+\usepackage{graphicx}
+
+\title{More packages – \textbf{graphics} 
+
+Class 5 (26-03-20)}
+\author{Rashad Mahmudov}
+\date{}
+
+\begin{document}
+
+\maketitle
+\section*{Colours graphics in the document}
+First you have to input packages using
+\verb|\usepackage{color}and \usepackage{graphicx}|.
+Then read the packages documentation.
+
+This document ”Packages in the graphics bundle” serves as a user-manual
+for the packages \verb|color, graphics, and graphicx|. Further documentation may
+be obtained by processing the source (dtx) files of the individual packages.
+
+\subsection*{Package \normalfont{colour}}
+One special option for the \verb|color| package that is of interest is \verb|monochrome|. If
+this option is selected the colour commands are all disabled so that they do not
+generate errors, but do not generate colour either. This is useful if previewing
+with a previewer that can not produce colour.
+
+\subsection*{Defining colours}
+The colours \verb|black,white,red,green,blue,cyan,magenta,yellow |should be predefined, but should you wish to mix your own colours use the \verb|\definecolor| command.
+
+\begin{verbatim}
+\definecolor{light-blue}{rgb}{0.8,0.85,1}
+\definecolor{mygrey}{gray}{0.75}
+\end{verbatim}
+
+To use predefined colour you have to write \verb|\color{name}|. To write text in colour you write \verb|\textcolor{name}{text}|.
+
+\textcolor{red}{Users are encouraged to produce different versions of this file for any printers they use.}
+
+\textcolor{blue}{Users are encouraged to produce different versions of this file for any printers they use.}
+
+\textcolor{magenta}{Users are encouraged to produce different versions of this file for any printers they use.}
+
+\newpage
+
+\section*{Package \normalfont{graphicx}}
+
+Package \verb|graphicx| is ‘extended’ textttgraphics package.
+
+Usage: \verb|\includegraphics[options]{file.jpg}|. It is possible to use also
+.pdf and .png files.
+
+As \verb|options| you can write for example: scale=number, rotate=angle, width=value,
+heigth=value.
+
+\subsection*{Some examples}
+
+
+\begin{enumerate}
+  \item Picture in normal size (here we use option scale=0.1).
+  \item[] \includegraphics[scale=0.1]{logo.jpg} \hspace{2mm} \includegraphics[scale=0.1]{logo-1.jpg}
+  \item Picture rotated. We use option angle=45 and -45.
+  \item[] \includegraphics[scale=0.1,angle=45]{logo-1.jpg} \hspace{2mm} \includegraphics[scale=0.1,angle=-45]{logo-1.jpg}
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

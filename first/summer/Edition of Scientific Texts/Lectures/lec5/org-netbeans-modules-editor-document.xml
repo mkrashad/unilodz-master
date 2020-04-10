@@ -1,0 +1,27 @@
+s && item.contents.hasOwnProperty("getterValue");
+}
+
+function nodeIsObject(item) {
+  const value = getValue(item);
+  return value && value.type === "object";
+}
+
+function nodeIsArrayLike(item) {
+  const value = getValue(item);
+  return GripArrayRep.supportsObject(value) || ArrayRep.supportsObject(value);
+}
+
+function nodeIsFunction(item) {
+  const value = getValue(item);
+  return value && value.class === "Function";
+}
+
+function nodeIsOptimizedOut(item) {
+  const value = getValue(item);
+  return !nodeHasChildren(item) && value && value.optimizedOut;
+}
+
+function nodeIsUninitializedBinding(item) {
+  const value = getValue(item);
+  return value && value.uninitialized;
+} // Used to check if an item represents a binding t
