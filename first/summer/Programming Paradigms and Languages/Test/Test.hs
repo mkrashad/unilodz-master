@@ -44,9 +44,3 @@ main = do
  putStr "Write second number = "
  y <- getLine
  putStrLn("Mean of x and y = "  ++ (show  (((read x ::Double) + (read y::Double)) /2)))
-
-
-
-
-
-
