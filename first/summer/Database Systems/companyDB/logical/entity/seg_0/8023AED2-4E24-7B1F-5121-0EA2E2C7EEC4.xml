@@ -1,0 +1,84 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="8023AED2-4E24-7B1F-5121-0EA2E2C7EEC4" name="Address">
+<createdBy>Rashad</createdBy>
+<createdTime>2020-04-06 19:03:02 UTC</createdTime>
+<ownerDesignName>companyDB</ownerDesignName>
+<engineerTo>
+<item key="608FF0FE-49BC-286B-3C11-04BF69773700" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Address_ID" id="02BAE970-2FA1-399C-2993-C32E80D401E6">
+<createdBy>Rashad</createdBy>
+<createdTime>2020-04-06 19:13:00 UTC</createdTime>
+<ownerDesignName>companyDB</ownerDesignName>
+<engineerTo>
+<item key="608FF0FE-49BC-286B-3C11-04BF69773700" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Street" id="CB073AEF-3086-1334-88C4-3C5EE9E1F6C7">
+<createdBy>Rashad</createdBy>
+<createdTime>2020-04-06 19:05:49 UTC</createdTime>
+<ownerDesignName>companyDB</ownerDesignName>
+<engineerTo>
+<item key="608FF0FE-49BC-286B-3C11-04BF69773700" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Postal_Code" id="46BF4C1C-BEE6-16BF-14C1-83401563EA45">
+<createdBy>Rashad</createdBy>
+<createdTime>2020-04-06 19:08:04 UTC</createdTime>
+<ownerDesignName>companyDB</ownerDesignName>
+<engineerTo>
+<item key="608FF0FE-49BC-286B-3C11-04BF69773700" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="City_ID" id="F32806D2-CE25-935B-89E4-7F427B3689AC">
+<createdBy>Rashad</createdBy>
+<createdTime>2020-04-30 14:53:11 UTC</createdTime>
+<generatorID>0D4EDA55-06C8-9A12-3051-A5B24D2778D9</generatorID>
+<ownerDesignName>companyDB</ownerDesignName>
+<engineerTo>
+<item key="608FF0FE-49BC-286B-3C11-04BF69773700" value="true"/>
+</engineerTo>
+<referedAttribute>DC4F1693-D3BE-17C1-0144-94CBB5D112AB</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="368E84F7-73AE-9BD7-F57E-CCD58878C645" name="Address_PK">
+<createdBy>Rashad</createdBy>
+<createdTime>2020-04-09 09:53:36 UTC</createdTime>
+<ownerDesignName>companyDB</ownerDesignName>
+<engineerTo>
+<item key="608FF0FE-49BC-286B-3C11-04BF69773700" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>02BAE970-2FA1-399C-2993-C32E80D401E6</newElementsIDs>
+<usedAttributes>
+<attributeRef>02BAE970-2FA1-399C-2993-C32E80D401E6</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

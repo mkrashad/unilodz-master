@@ -1,0 +1,124 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CFF0EC52-8020-27F7-F90E-9270E9BA2148" name="Employment_Hsitory">
+<createdBy>Rashad</createdBy>
+<createdTime>2020-04-30 14:57:32 UTC</createdTime>
+<generatorID>2456B51C-E56D-5B2E-F302-21C8D6D4694F</generatorID>
+<ownerDesignName>companyDB</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Emp_Dept_ID" id="ACB264FE-5ADC-2A69-5378-DE809015D0EF">
+<createdBy>Rashad</createdBy>
+<createdTime>2020-04-30 14:57:32 UTC</createdTime>
+<generatorID>69E570DD-32F8-57C7-2814-D5452844DA7D</generatorID>
+<ownerDesignName>companyDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Salary" id="9EC2C9E2-1456-CFA6-E296-285EFE4CFEE5">
+<createdBy>Rashad</createdBy>
+<createdTime>2020-04-30 14:57:32 UTC</createdTime>
+<generatorID>F73C992C-0E85-B22B-2242-1C922F95A3F0</generatorID>
+<ownerDesignName>companyDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Start_Date" id="243FECA4-C1BC-A11E-CDB5-A7D657E9E8C1">
+<createdBy>Rashad</createdBy>
+<createdTime>2020-04-30 14:57:32 UTC</createdTime>
+<generatorID>9AF98343-FD2F-2C8E-5113-726172C1B60E</generatorID>
+<ownerDesignName>companyDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="End_Date" id="D448EB4D-2EE6-57C7-66F8-9929916121CE">
+<createdBy>Rashad</createdBy>
+<createdTime>2020-04-30 14:57:32 UTC</createdTime>
+<generatorID>65DDA8CC-CA63-DB33-13D8-97185A1580BE</generatorID>
+<ownerDesignName>companyDB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Employee_Employee_ID" id="54A195A0-D07C-E223-A2DD-1E85C889C551">
+<createdBy>Rashad</createdBy>
+<createdTime>2020-04-30 14:57:32 UTC</createdTime>
+<generatorID>A56F3895-7E4F-C095-8E74-C52532739EB0</generatorID>
+<ownerDesignName>companyDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C2A8BD5C-40E2-8C1F-8BB8-693CEF008BE7" referredColumn="FBF55411-FD64-3391-7560-4BFC845172BD"/>
+</associations>
+</Column>
+<Column name="Department_Department_ID" id="E1689CC9-35D9-FEA4-6207-91C7537BED61">
+<createdBy>Rashad</createdBy>
+<createdTime>2020-04-30 14:57:32 UTC</createdTime>
+<generatorID>F979D4B9-3298-88F6-32BB-06ECC2ABD5D7</generatorID>
+<ownerDesignName>companyDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8843B601-C717-62DD-A8A2-60053406513E" referredColumn="8D3C5413-4059-E032-7C71-82596F6BB850"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="70E367EC-FF47-66DB-0463-DF0B92EEFD8B" name="Employment_Hsitory_PK">
+<createdBy>Rashad</createdBy>
+<createdTime>2020-04-30 14:57:32 UTC</createdTime>
+<generatorID>B9AAB173-BABA-8737-0F15-B5049D7ECD55</generatorID>
+<ownerDesignName>companyDB</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="ACB264FE-5ADC-2A69-5378-DE809015D0EF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0533CB49-C386-2877-D313-3133AE6DA5CB" name="Employment_Hsitory_Department_FK">
+<createdBy>Rashad</createdBy>
+<createdTime>2020-04-30 14:57:32 UTC</createdTime>
+<generatorID>ED7088E4-03B1-FBD5-FAEC-1CD8DF19DE74</generatorID>
+<ownerDesignName>companyDB</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E1689CC9-35D9-FEA4-6207-91C7537BED61"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8CF47935-2ED2-221B-E97F-22FB238F1442" name="Employment_Hsitory_Employee_FK">
+<createdBy>Rashad</createdBy>
+<createdTime>2020-04-30 14:57:32 UTC</createdTime>
+<generatorID>4862C2FF-08FE-556A-75D9-BEC2C18BADE1</generatorID>
+<ownerDesignName>companyDB</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="54A195A0-D07C-E223-A2DD-1E85C889C551"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

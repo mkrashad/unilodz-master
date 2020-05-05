@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6E665E91-01CE-F2A4-5764-54C46429034E" name="City">
+<createdBy>Rashad</createdBy>
+<createdTime>2020-04-30 14:57:32 UTC</createdTime>
+<generatorID>32776E7F-518D-C62A-6BAC-F792B647017F</generatorID>
+<ownerDesignName>companyDB</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="City_ID" id="7C959BA6-4A93-A4A7-CB49-F93A4953FF4B">
+<createdBy>Rashad</createdBy>
+<createdTime>2020-04-30 14:57:32 UTC</createdTime>
+<generatorID>DC4F1693-D3BE-17C1-0144-94CBB5D112AB</generatorID>
+<ownerDesignName>companyDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="City_Name" id="0894979B-AAE9-2025-3A92-DD0A28C49D30">
+<createdBy>Rashad</createdBy>
+<createdTime>2020-04-30 14:57:32 UTC</createdTime>
+<generatorID>0EB393A8-79A1-DA6C-6E2C-5EB3C1107255</generatorID>
+<ownerDesignName>companyDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Country_Country_ID" id="1E1B21F6-C19A-2A33-8F81-55EDDFF36165">
+<createdBy>Rashad</createdBy>
+<createdTime>2020-04-30 14:57:32 UTC</createdTime>
+<generatorID>36FEBB54-7A66-195C-248F-5076419A33BE</generatorID>
+<ownerDesignName>companyDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EE398DAC-3D29-4630-CB20-F2D3FC312735" referredColumn="938A02AA-3296-136D-429B-D2773A2D082E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="EE036498-945C-1012-2110-895A73EE383D" name="City_PK">
+<createdBy>Rashad</createdBy>
+<createdTime>2020-04-30 14:57:32 UTC</createdTime>
+<generatorID>20FBF6EC-9596-73D7-9427-0747A56619C8</generatorID>
+<ownerDesignName>companyDB</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7C959BA6-4A93-A4A7-CB49-F93A4953FF4B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3FCDD581-AC90-F301-3E96-389B80730058" name="City_Country_FK">
+<createdBy>Rashad</createdBy>
+<createdTime>2020-04-30 14:57:32 UTC</createdTime>
+<generatorID>C1CACA0A-D467-7B0B-CDC7-E7FF01924814</generatorID>
+<ownerDesignName>companyDB</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1E1B21F6-C19A-2A33-8F81-55EDDFF36165"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

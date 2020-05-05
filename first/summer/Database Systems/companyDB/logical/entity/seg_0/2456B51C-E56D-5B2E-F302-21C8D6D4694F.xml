@@ -1,0 +1,113 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="2456B51C-E56D-5B2E-F302-21C8D6D4694F" name="Employment Hsitory">
+<createdBy>Rashad</createdBy>
+<createdTime>2020-04-06 18:44:38 UTC</createdTime>
+<ownerDesignName>companyDB</ownerDesignName>
+<engineerTo>
+<item key="608FF0FE-49BC-286B-3C11-04BF69773700" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Emp_Dept_ID" id="69E570DD-32F8-57C7-2814-D5452844DA7D">
+<createdBy>Rashad</createdBy>
+<createdTime>2020-04-06 18:44:54 UTC</createdTime>
+<ownerDesignName>companyDB</ownerDesignName>
+<engineerTo>
+<item key="608FF0FE-49BC-286B-3C11-04BF69773700" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Salary" id="F73C992C-0E85-B22B-2242-1C922F95A3F0">
+<createdBy>Rashad</createdBy>
+<createdTime>2020-04-06 18:45:12 UTC</createdTime>
+<ownerDesignName>companyDB</ownerDesignName>
+<engineerTo>
+<item key="608FF0FE-49BC-286B-3C11-04BF69773700" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<dataTypePrecision>9</dataTypePrecision>
+<ownDataTypeParameters>,9,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Start_Date" id="9AF98343-FD2F-2C8E-5113-726172C1B60E">
+<createdBy>Rashad</createdBy>
+<createdTime>2020-04-06 18:47:17 UTC</createdTime>
+<ownerDesignName>companyDB</ownerDesignName>
+<engineerTo>
+<item key="608FF0FE-49BC-286B-3C11-04BF69773700" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="End_Date" id="65DDA8CC-CA63-DB33-13D8-97185A1580BE">
+<createdBy>Rashad</createdBy>
+<createdTime>2020-04-06 18:47:25 UTC</createdTime>
+<ownerDesignName>companyDB</ownerDesignName>
+<engineerTo>
+<item key="608FF0FE-49BC-286B-3C11-04BF69773700" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Employee_ID" id="A56F3895-7E4F-C095-8E74-C52532739EB0">
+<createdBy>Rashad</createdBy>
+<createdTime>2020-04-30 14:43:40 UTC</createdTime>
+<generatorID>4862C2FF-08FE-556A-75D9-BEC2C18BADE1</generatorID>
+<ownerDesignName>companyDB</ownerDesignName>
+<engineerTo>
+<item key="608FF0FE-49BC-286B-3C11-04BF69773700" value="true"/>
+</engineerTo>
+<referedAttribute>5B208630-D36C-4AF8-2355-D8AB0EFF95DF</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Department_ID" id="F979D4B9-3298-88F6-32BB-06ECC2ABD5D7">
+<createdBy>Rashad</createdBy>
+<createdTime>2020-04-30 14:43:54 UTC</createdTime>
+<generatorID>ED7088E4-03B1-FBD5-FAEC-1CD8DF19DE74</generatorID>
+<ownerDesignName>companyDB</ownerDesignName>
+<engineerTo>
+<item key="608FF0FE-49BC-286B-3C11-04BF69773700" value="true"/>
+</engineerTo>
+<referedAttribute>327D69C1-3F57-5343-F2C8-28EDEAC5EE3E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="B9AAB173-BABA-8737-0F15-B5049D7ECD55" name="Emp_PK">
+<createdBy>Rashad</createdBy>
+<createdTime>2020-04-09 09:53:02 UTC</createdTime>
+<ownerDesignName>companyDB</ownerDesignName>
+<engineerTo>
+<item key="608FF0FE-49BC-286B-3C11-04BF69773700" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>69E570DD-32F8-57C7-2814-D5452844DA7D</newElementsIDs>
+<usedAttributes>
+<attributeRef>69E570DD-32F8-57C7-2814-D5452844DA7D</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E2A9728C-27D8-5788-B55A-53589C2B7851" name="Address">
+<createdBy>Rashad</createdBy>
+<createdTime>2020-04-30 14:57:32 UTC</createdTime>
+<generatorID>8023AED2-4E24-7B1F-5121-0EA2E2C7EEC4</generatorID>
+<ownerDesignName>companyDB</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Address_ID" id="B0594589-C6B6-EC5A-867D-A2A890B20A58">
+<createdBy>Rashad</createdBy>
+<createdTime>2020-04-30 14:57:32 UTC</createdTime>
+<generatorID>02BAE970-2FA1-399C-2993-C32E80D401E6</generatorID>
+<ownerDesignName>companyDB</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Street" id="01E833BE-B4A8-4A73-91B9-5FD7F87C8131">
+<createdBy>Rashad</createdBy>
+<createdTime>2020-04-30 14:57:32 UTC</createdTime>
+<generatorID>CB073AEF-3086-1334-88C4-3C5EE9E1F6C7</generatorID>
+<ownerDesignName>companyDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Postal_Code" id="E8F1F923-1E64-0AAC-C071-EA308B87C821">
+<createdBy>Rashad</createdBy>
+<createdTime>2020-04-30 14:57:32 UTC</createdTime>
+<generatorID>46BF4C1C-BEE6-16BF-14C1-83401563EA45</generatorID>
+<ownerDesignName>companyDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="City_City_ID" id="B740EC6B-A086-FFFF-ED8D-E251E10C6407">
+<createdBy>Rashad</createdBy>
+<createdTime>2020-04-30 14:57:32 UTC</createdTime>
+<generatorID>F32806D2-CE25-935B-89E4-7F427B3689AC</generatorID>
+<ownerDesignName>companyDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="30DA3FD7-5F13-6450-556E-35507EA559BE" referredColumn="7C959BA6-4A93-A4A7-CB49-F93A4953FF4B"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="30AA5D6F-ECBF-5433-31DA-2CE14E13A72B" name="Address_PK">
+<createdBy>Rashad</createdBy>
+<createdTime>2020-04-30 14:57:32 UTC</createdTime>
+<generatorID>368E84F7-73AE-9BD7-F57E-CCD58878C645</generatorID>
+<ownerDesignName>companyDB</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B0594589-C6B6-EC5A-867D-A2A890B20A58"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="27C00A56-BF2E-51B6-9722-39C7A1B22509" name="Address_City_FK">
+<createdBy>Rashad</createdBy>
+<createdTime>2020-04-30 14:57:32 UTC</createdTime>
+<generatorID>0D4EDA55-06C8-9A12-3051-A5B24D2778D9</generatorID>
+<ownerDesignName>companyDB</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B740EC6B-A086-FFFF-ED8D-E251E10C6407"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
