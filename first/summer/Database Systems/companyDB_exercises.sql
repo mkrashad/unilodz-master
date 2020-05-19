@@ -16,10 +16,21 @@ BEGIN
 END insert_emp;
 /
 
+
+CREATE OR REPLACE PROCEDURE inc_salary IS
+BEGIN
+    UPDATE employment_history
+    SET salary = (salary * 25)/100 + salary
+    WHERE salary < 2000;
+END inc_salary;
+/
+
+
 -- Procedure call
 EXEC insert_emp;
 /
-
+EXEC inc_salary;
+/
 
 -- DML Trigger
 CREATE OR REPLACE TRIGGER alter_emp
@@ -41,9 +52,6 @@ CREATE OR REPLACE TRIGGER alter_emp
     END IF;
    END;
 
-UPDATE employee SET email= 'MANAFAGAEV@GMAIL.COM' WHERE employee_id = 11;
-DELETE FROM employee WHERE employee_id = 11;
-
 
 -- DDL Trigger
 CREATE OR REPLACE TRIGGER audit_tr 
@@ -60,6 +68,8 @@ END;
 
 
 
+-- UPDATE employee SET email= 'MANAFAGAEV@GMAIL.COM' WHERE employee_id = 11;
+-- DELETE FROM employee WHERE employee_id = 11;
 -- CREATE TABLE temp (temp NUMBER);
 -- DROP TABLE temp;
 -- SELECT * FROM employment_history;
