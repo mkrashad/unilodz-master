@@ -17,20 +17,40 @@ END insert_emp;
 /
 
 
+-- Increase Salary Procedure
 CREATE OR REPLACE PROCEDURE inc_salary IS
 BEGIN
+    SAVEPOINT no_inc;
     UPDATE employment_history
     SET salary = (salary * 25)/100 + salary
     WHERE salary < 2000;
+    EXCEPTION
+        WHEN OTHERS THEN
+            ROLLBACK TO no_inc;
+    RAISE;
 END inc_salary;
 /
 
 
--- Procedure call
-EXEC insert_emp;
+-- Procedures call
+BEGIN
+  insert_emp
+END;
 /
-EXEC inc_salary;
+
+BEGIN
+ inc_salary;
+END;
 /
+
+
+-- DECLARE
+-- BEGIN
+--    sptest();
+-- EXCEPTION
+--    ROLLBACK;
+-- END;
+
 
 -- DML Trigger
 CREATE OR REPLACE TRIGGER alter_emp
@@ -65,6 +85,20 @@ ora_dict_obj_name,
 ora_sysevent);
 END;
 /
+
+
+SELECT employee.first_name, employee.last_name,
+employment_history.salary FROM employee, employment_history 
+WHERE employee_id = emp_dept_id AND ORDER BY employee_id;
+
+SELECT salary, COUNT(*) AS salary_count FROM employment_history 
+GROUP BY salary HAVING salary < 2000 ORDER BY salary_count;
+
+SELECT country.country_name, city.city_name, address.street 
+FROM country, city, address WHERE country_id = city_id 
+AND city_id = address_id ORDER BY country_name;
+
+
 
 
 
