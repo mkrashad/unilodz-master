@@ -2,7 +2,7 @@ SET SERVEROUTPUT ON;
 
 -- Insert Procedure
 CREATE OR REPLACE PROCEDURE insert_emp IS
-    p_emp_id NUMBER := 11;
+    p_emp_id NUMBER := SEQ_EMPLOYEE.NEXTVAl;
     p_position_id NUMBER := 1;
     p_address_id NUMBER := 1;
     p_first_name VARCHAR(25):= 'Manaf';
@@ -18,11 +18,11 @@ END insert_emp;
 
 
 -- Increase Salary Procedure
-CREATE OR REPLACE PROCEDURE inc_salary IS
+CREATE OR REPLACE PROCEDURE inc_salary (percent NUMBER)
+IS
 BEGIN
-    SAVEPOINT no_inc;
     UPDATE employment_history
-    SET salary = (salary * 25)/100 + salary
+    SET salary = (salary * percent)/100 + salary
     WHERE salary < 2000;
     EXCEPTION
         WHEN OTHERS THEN
@@ -39,7 +39,7 @@ END;
 /
 
 BEGIN
- inc_salary;
+ inc_salary(25);
 END;
 /
 
@@ -87,9 +87,10 @@ END;
 /
 
 
-SELECT employee.first_name, employee.last_name,
-employment_history.salary FROM employee, employment_history 
-WHERE employee_id = emp_dept_id AND ORDER BY employee_id;
+SELECT employee.first_name AS name, employee.last_name AS surname, 
+position.position_name AS position,employment_history.salary AS earnings 
+FROM employee, position, employment_history WHERE employee_id = position_id 
+AND position_id = emp_dept_id AND salary < 2000 ORDER BY salary;
 
 SELECT salary, COUNT(*) AS salary_count FROM employment_history 
 GROUP BY salary HAVING salary < 2000 ORDER BY salary_count;
@@ -97,10 +98,6 @@ GROUP BY salary HAVING salary < 2000 ORDER BY salary_count;
 SELECT country.country_name, city.city_name, address.street 
 FROM country, city, address WHERE country_id = city_id 
 AND city_id = address_id ORDER BY country_name;
-
-
-
-
 
 -- UPDATE employee SET email= 'MANAFAGAEV@GMAIL.COM' WHERE employee_id = 11;
 -- DELETE FROM employee WHERE employee_id = 11;
@@ -112,3 +109,8 @@ AND city_id = address_id ORDER BY country_name;
 -- ALTER TABLE employee DROP CONSTRAINT position_pk;
 -- DROP TRIGGER alter_emp;
 
+UPDATE employment_history SET salary= 1500 WHERE emp_dept_id = 1;
+UPDATE employment_history SET salary= 1700 WHERE emp_dept_id = 2;
+UPDATE employment_history SET salary= 1800 WHERE emp_dept_id = 8;
+UPDATE employment_history SET salary= 1500 WHERE emp_dept_id = 9;
+UPDATE employment_history SET salary= 1300 WHERE emp_dept_id = 10;
