@@ -1,4 +1,4 @@
-**/*.localz
-**/*.local
-**/*.git
-**/*.DS_Store
+companyDB/
+companyDB-solution.sql
+Project.txt
+emp.ddl
