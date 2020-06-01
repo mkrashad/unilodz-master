@@ -2,6 +2,10 @@
 --   at:        2020-04-30 17:00:26 CEST
 --   site:      Oracle Database 11g
 --   type:      Oracle Database 11g
+
+
+-- 1) Create database diagram for the project 
+-- 2) Create database in Oracle server for the digram 
 CREATE TABLE schema_audit
   (
     ddl_date       DATE,
