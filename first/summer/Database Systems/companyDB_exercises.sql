@@ -97,12 +97,10 @@ AND city_id = address_id ORDER BY country_name;
 
 -- Additional
 -- 8) Display position and number of employees having a given position
-SELECT *
-FROM
-(SELECT position.position_name AS pos, COUNT(*) AS empCount
- FROM position INNER JOIN employee ON position.position_id = employee.position_position_id 
- AND position.position_name LIKE '%President%'
- GROUP BY position.position_name) WHERE ROWNUM=1 ;
+SELECT position.position_name AS position, COUNT(*) AS empCount
+FROM position INNER JOIN employee ON position.position_id = employee.position_position_id 
+AND position.position_name LIKE '%Finance%'
+GROUP BY position.position_name ;
 
 -- 9) Get the oldest female and the oldest male and thier salary, department,
 -- The Oldest Female
@@ -119,10 +117,17 @@ FROM employee, department, employment_history
 WHERE employee_id = employment_history.emp_dept_id AND employment_history.emp_dept_id = department.department_id
 AND birth_date = (SELECT min(birth_date) from employee WHERE gender = 'M');
 
+--10) Get employees who changed department.
+SELECT employee.first_name as name, employee.last_name as surname, employment_history.start_date,
+employment_history.end_date, employment_history.salary as salary, department.department_name as departament 
+FROM employee, employment_history, department WHERE employee.employee_id = employment_history.employee_employee_id 
+AND department.department_id = employment_history.department_department_id 
+AND employment_history.employee_employee_id != employment_history.department_department_id;
+
 -- 11) Get departments having the most employees.
-SELECT * FROM (SELECT department.department_name AS department, COUNT(*) AS empCount
+SELECT department.department_name AS department, COUNT(*) AS empCount
 FROM department INNER JOIN employee ON department.department_id = employee.position_position_id
-GROUP BY department.department_name) WHERE ROWNUM=1;
+GROUP BY department.department_name order by empCount desc;
 
 -- 12) Get employees (first name and last name) and their age who are the youngest.
 -- The youngest
