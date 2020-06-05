@@ -95,44 +95,53 @@ SELECT country.country_name, city.city_name, address.street
 FROM country, city, address WHERE country_id = city_id 
 AND city_id = address_id ORDER BY country_name;
 
+
 -- Additional
 -- 8) Display position and number of employees having a given position
-SELECT position.position_name AS position, COUNT(*) AS empCount
-FROM position INNER JOIN employee ON position.position_id = employee.position_position_id 
-AND position.position_name LIKE '%Finance%'
-GROUP BY position.position_name ;
+SELECT p.position_name AS position, COUNT(*) AS empCount FROM position p 
+INNER JOIN employee e ON p.position_id = e.position_position_id 
+AND p.position_name LIKE '%Administration Assistant%' GROUP BY p.position_name;
+
 
 -- 9) Get the oldest female and the oldest male and thier salary, department,
--- The Oldest Female
-SELECT employee.first_name AS name, employee.last_name AS surname, employee.birth_date AS birthday,
-employment_history.salary AS earnings, department.department_name AS department 
-FROM employee, department, employment_history 
-WHERE employee_id = employment_history.emp_dept_id AND employment_history.emp_dept_id = department.department_id
-AND birth_date = (SELECT min(birth_date) from employee WHERE gender = 'F');
+SELECT e.first_name AS name, e.last_name AS surname, e.birth_date AS birthday,e.gender as gender, 
+h.salary AS earnings, d.department_name AS department FROM employee e, department d, 
+employment_history h WHERE e.employee_id = h.employee_employee_id AND h.emp_dept_id = d.department_id 
+AND e.birth_date IN (SELECT min(e.birth_date) FROM employment_history h INNER JOIN employee e 
+ON h.employee_employee_id = e.employee_id GROUP BY e.gender);
 
--- The Oldest Male
-SELECT employee.first_name AS name, employee.last_name AS surname, employee.birth_date AS birthday,
-employment_history.salary AS earnings, department.department_name AS department 
-FROM employee, department, employment_history 
-WHERE employee_id = employment_history.emp_dept_id AND employment_history.emp_dept_id = department.department_id
-AND birth_date = (SELECT min(birth_date) from employee WHERE gender = 'M');
 
 --10) Get employees who changed department.
-SELECT employee.first_name as name, employee.last_name as surname, employment_history.start_date,
-employment_history.end_date, employment_history.salary as salary, department.department_name as departament 
-FROM employee, employment_history, department WHERE employee.employee_id = employment_history.employee_employee_id 
-AND department.department_id = employment_history.department_department_id 
-AND employment_history.employee_employee_id != employment_history.department_department_id;
+-- Option One
+SELECT e.first_name as name, e.last_name FROM employee e, employment_history h, department d 
+WHERE e.employee_id = h.employee_employee_id AND d.department_id = h.department_department_id 
+AND h.department_department_id IN(SELECT h.employee_employee_id FROM employment_history h
+GROUP BY h.employee_employee_id HAVING COUNT(h.employee_employee_id) > 1);
+
+-- Option Second
+SELECT e.first_name as name, e.last_name as surname, h.start_date, h.end_date, h.salary 
+as salary, d.department_name as departament FROM employee e, employment_history h, 
+department d WHERE e.employee_id = h.employee_employee_id AND d.department_id =
+h.department_department_id AND h.employee_employee_id != h.department_department_id;
+
+-- Option Third
+SELECT e.first_name as name, e.last_name as surname, h.start_date, h.end_date, h.salary as salary, 
+d.department_name as departament FROM employee e, employment_history h, department d 
+WHERE e.employee_id = h.employee_employee_id AND d.department_id = h.department_department_id 
+AND h.start_date IN (SELECT MAX(h.start_date) FROM employment_history h INNER JOIN employee e 
+ON h.employee_employee_id = e.employee_id GROUP BY h.employee_employee_id HAVING COUNT(h.employee_employee_id) > 1);
+
 
 -- 11) Get departments having the most employees.
-SELECT department.department_name AS department, COUNT(*) AS empCount
-FROM department INNER JOIN employee ON department.department_id = employee.position_position_id
-GROUP BY department.department_name order by empCount desc;
+SELECT d.department_name AS department, count(*) as employee FROM department d 
+INNER JOIN employee e ON d.department_id = e.position_position_id GROUP BY d.department_name 
+HAVING COUNT(*) = (SELECT MAX(myCount) FROM(SELECT count(*) as myCount FROM department d 
+INNER JOIN employee e ON d.department_id = e.position_position_id GROUP BY d.department_name));
 
 -- 12) Get employees (first name and last name) and their age who are the youngest.
 -- The youngest
-SELECT employee.first_name AS name, employee.last_name AS surname, employee.birth_date 
-FROM employee WHERE birth_date = (SELECT max(birth_date) from employee);
+SELECT e.first_name AS name, e.last_name AS surname, e.birth_date 
+FROM employee e WHERE birth_date = (SELECT max(birth_date) from employee);
 
 
 -- UPDATE employee SET email= 'MANAFAGAEV@GMAIL.COM' WHERE employee_id = 11;
