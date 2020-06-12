@@ -1,55 +1,43 @@
 from random import randint
-from math import ceil
+from sys import maxsize
 
 
 def find_gcd(a, b):
-    if a == 0 or b == 0:
+    if b == 0:
         return a
     else:
         return find_gcd(b, a % b)
 
 
-def coprime_count(num):
+def coprime_count(length, trials):
     count = 0
-    for i in range(num):
-        x = find_gcd(randint(1, 100), randint(1, 100))
-        if x == 1:
+    for i in range(trials):
+        number2 = find_gcd(randint(1, maxsize), randint(1, maxsize))
+        number3 = find_gcd(number2, randint(1, maxsize))
+        number4 = find_gcd(number3, randint(1, maxsize))
+        number5 = find_gcd(number4, randint(1, maxsize))
+        number6 = find_gcd(number5, randint(1, maxsize))
+        if (length == 2 and number2 == 1) or (length == 3 and number3 == 1) or (length == 4 and number4 == 1) or (length == 5 and number5 == 1) or (length == 6 and number6 == 1):
             count += 1
     return count
 
 
-def nat_numbers():
-    numbers = int(input("Write number from 2 to 6: "))
-    if numbers == 2:
-        my_length = int(input("Please write the length: "))
-        success = coprime_count(my_length)
-        ratio = success / my_length * 100
-        print(
-            f'The frequency coprime of {numbers} numbers with length {my_length} and success {success} is {ceil(ratio)}%')
-    elif numbers == 3:
-        num1 = 8
-        num2 = 4
-        gcd = find_gcd(num1, num2)
-        gcd = find_gcd(gcd, 3)
-        print(gcd)
+def coprime_ratio(length, trials):
+    success = coprime_count(length, trials)
+    ratio = success / trials * 100
+    # print(
+    # f'The frequency coprime of {length} numbers with length {trials} and success {success} is {ratio}%')
+    print("The frequency coprime of", length, "numbers with trials",
+          trials, "and success", success, "is", ratio, "%")
 
 
 def main():
-    # numbers = int(input("Write number from 2 to 6: "))
-    # if numbers == 2:
-    #     my_length = int(input("Please write the length: "))
-    #     success = coprime_count(my_length)
-    #     ratio = success / my_length * 100
-    #     print(
-    #         f'The frequency coprime of length {my_length} and success {success} is {ceil(ratio)}%')
-    # else:
-    #     print("Bad number")
-    # num1 = 8
-    # num2 = 4
-    # gcd = find_gcd(num1, num2)
-    # gcd = find_gcd(gcd, 3)
-    # print(gcd)
-    nat_numbers()
+    length = int(input("Write length from 2 to 6: "))
+    if length >= 2 and length <= 6:
+        trials = int(input("Please write the trials: "))
+        coprime_ratio(length, trials)
+    else:
+        print("The length out of the range")
 
 
 if __name__ == '__main__':
