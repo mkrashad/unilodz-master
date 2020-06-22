@@ -38,8 +38,7 @@ def main():
     if v == 1:
         print("We are failed, play this game again")
     else:
-        print("Diffie-Hellman parameters is: (p,g)", p, g)
-
+        print("Diffie-Hellman parameters are: (p,g)", p, g)
 
 
 if __name__ == "__main__":
