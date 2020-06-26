@@ -1,8 +1,10 @@
-01.png
 .vscode/
+01.png
+01_new.png
 affine_cipher.zip
 coprime_ratio(not completed).zip
 coprime.zip
-diffie_hellman.zip
+diffie_hellman_new.zip
 egcd.zip
-new/
+elGamal.zip
+elGamal_gui
