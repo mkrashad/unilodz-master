@@ -18,7 +18,7 @@ def safe_prime(start, end):
     new_prime = []
     primes = [i for i in range(start, end) if is_prime(i)]
     for p in primes:
-        check_prime = (2*p) + 1
+        check_prime = int((p-1)/2)
         if is_prime(check_prime):
             new_prime.append(p)
     random_safe_prime = random.choice(new_prime)
