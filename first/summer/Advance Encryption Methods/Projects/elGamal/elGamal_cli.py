@@ -33,44 +33,47 @@ def compute(p, g, c1, A, b):
 
 
 def main():
-    #  Public
-    p = int(input("Write safe prime: "))
-    # p = 16487
-    g = int(input("Write generator: "))
-    # g = 14
+    try:
+        #  Public
+        p = int(input("Write safe prime: "))
+        # p = 16487
+        g = int(input("Write generator: "))
+        # g = 14
 
-    # Alice
-    # a - private key
-    # A - public key
-    # A = g^a mod p
-    # C1 - cipher text
-    # Bob
-    # b - private key
-    # B - public key
+        # Alice
+        # a - private key
+        # A - public key
+        # A = g^a mod p
+        # C1 - cipher text
+        # Bob
+        # b - private key
+        # B - public key
 
-    c1 = int(input("Write cipher text: "))
-    # C1 = 15989
+        c1 = int(input("Write cipher text: "))
+        # C1 = 15989
 
-    A = int(input("Write Alice's public key: "))
-    # A = 2454
+        A = int(input("Write Alice's public key: "))
+        # A = 2454
 
-    b = int(input("Write Bob's private key: "))
-    # b = 3259
+        b = int(input("Write Bob's private key: "))
+        # b = 3259
 
-    # Get Bob's public key, shared secret, inverse modular and original pin
-    B, ss, x, y = compute(p, g, c1, A, b)
+        # Get Bob's public key, shared secret, inverse modular and original pin
+        B, ss, x, y = compute(p, g, c1, A, b)
 
-    # B = 2334
-    print("Bob's public key is:", B)
+        # B = 2334
+        print("Bob's public key is:", B)
 
-    # ss = 4459
-    print("Shared secret is:", ss)
+        # ss = 4459
+        print("Shared secret is:", ss)
 
-    # x = 9484
-    print("Inverse modular of ss is:", x)
+        # x = 9484
+        print("Inverse modular of ss is:", x)
 
-    # y =  8737
-    print("Debit/Credit card's PIN number is:", y)
+        # y =  8737
+        print("Debit/Credit card's PIN number is:", y)
+    except ValueError:
+        print("Please enter all fields and only integers")
 
 
 if __name__ == "__main__":
