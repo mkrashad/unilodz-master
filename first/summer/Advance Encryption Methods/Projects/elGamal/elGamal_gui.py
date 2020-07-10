@@ -6,7 +6,7 @@ gi.require_version("Gtk", "3.0")
 class MyWindow(Gtk.Window):
     def __init__(self):
         # Window Settings
-        Gtk.Window.__init__(self, title="Rashad's Cipher 1.1.1")
+        Gtk.Window.__init__(self, title="Rashad's Cipher 1.1.2")
         Gtk.Window.set_default_size(self, 500, 200)
         self.set_border_width(10)
 
@@ -116,11 +116,24 @@ class MyWindow(Gtk.Window):
             # ss = 4459
             # x = 9484
             # y =  8737
+        except ValueError as e:
+          # Dialog Box
+            dialog = Gtk.MessageDialog(
+                self,
+                0,
+                Gtk.MessageType.ERROR,
+                Gtk.ButtonsType.CLOSE,
+                "Please enter all fields"
+            )
+            dialog.run()
+            print(e)
+            dialog.destroy()
+        except Exception as e:
+            print("Error, please try different numbers")
+        else:
             result = "Bob's public key is: " + \
                 str(B) + "\n" + "Shared secret is: " + str(ss) + "\n" + "Inverse modular of ss is: " + \
                 str(x) + "\n" + "Debit/Credit card's PIN number is: " + str(y)
-            print(result)
-
             # Dialog Box
             dialog = Gtk.MessageDialog(
                 self,
@@ -133,21 +146,10 @@ class MyWindow(Gtk.Window):
                 result
             )
             dialog.run()
+            print(f"The ciphertext decrypted successfully\n{result}")
+            dialog.destroy()
+        finally:
             print("INFO dialog closed")
-
-            dialog.destroy()
-        except ValueError:
-          # Dialog Box
-            dialog = Gtk.MessageDialog(
-                self,
-                0,
-                Gtk.MessageType.ERROR,
-                Gtk.ButtonsType.CLOSE,
-                "Please enter all fields and only integers"
-            )
-            dialog.run()
-            print("Please enter all fields")
-            dialog.destroy()
 
 
 if __name__ == "__main__":
