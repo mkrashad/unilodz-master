@@ -1,9 +1,10 @@
+import elGamal_func
 from gi.repository import Gtk
 import gi
 gi.require_version("Gtk", "3.0")
 
 
-class MyWindow(Gtk.Window):
+class MainWindow(Gtk.Window):
     def __init__(self):
         # Window Settings
         Gtk.Window.__init__(self, title="Rashad's Cipher 1.1.2")
@@ -62,38 +63,8 @@ class MyWindow(Gtk.Window):
         self.button_decrypt.connect("clicked", self.main)
         self.grid.attach(self.button_decrypt, 4, 7, 2, 2)
 
-    def egcd(self, a, b):
-        if a == 0:
-            return (b, 0, 1)
-        else:
-            gcd, x, y = self.egcd(b % a, a)
-            return(gcd, y - (b//a) * x, x)
-
-    def inverse_modular(self, gcd, x, y, p):
-        if gcd == 1:
-            if x < 0:
-                ss1 = p - (-x % p)
-            else:
-                ss1 = x + p
-            return ss1
-
-    def compute(self, p, g, c1, A, b):
-        # B - public key
-        # B = g^b mod p
-        B = (g**b) % p
-        # ss - shared Secret
-        # ss = A^b mod p
-        ss = (A**b) % p
-        # EGCD
-        gcd, x, y = self.egcd(ss, p)
-        # Modular inverse
-        # x = (ss**-1) % p
-        x = self.inverse_modular(gcd, x, y, p)
-        # Clear Text
-        y = x * c1 % p
-        return B, ss, x, y
-
     def main(self, widget):
+        function = elGamal_func.Function()
         try:
             # Get Safe Prime
             # p = 16487
@@ -111,7 +82,7 @@ class MyWindow(Gtk.Window):
             # b = 3259
             b = int(self.entry_bob.get_text())
             # Get Bob's public key, shared secret, inverse modular and original pin
-            B, ss, x, y = self.compute(p, g, c1, A, b)
+            B, ss, x, y = function.compute(p, g, c1, A, b)
             # B = 2334
             # ss = 4459
             # x = 9484
@@ -129,7 +100,16 @@ class MyWindow(Gtk.Window):
             print(e)
             dialog.destroy()
         except Exception as e:
-            print("Error, please try different numbers")
+            dialog = Gtk.MessageDialog(
+                self,
+                0,
+                Gtk.MessageType.ERROR,
+                Gtk.ButtonsType.CLOSE,
+                "Error, please try again with different numbers"
+            )
+            dialog.run()
+            print(e)
+            dialog.destroy()
         else:
             result = "Bob's public key is: " + \
                 str(B) + "\n" + "Shared secret is: " + str(ss) + "\n" + "Inverse modular of ss is: " + \
@@ -153,7 +133,7 @@ class MyWindow(Gtk.Window):
 
 
 if __name__ == "__main__":
-    win = MyWindow()
+    win = MainWindow()
     win.connect("destroy", Gtk.main_quit)
     win.show_all()
     Gtk.main()
